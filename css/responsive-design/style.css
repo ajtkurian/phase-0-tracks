@@ -1,3 +1,32 @@
+
+#external-links {
+
+position: relative;
+max-width: 20%;
+min-width: 100px;
+vertical-align: top;
+display: inline-block;
+height: 100%
+}
+
+
+main {
+position: absolute;
+max-width:  756px;
+min-width: 189px;
+vertical-align: top;
+display: inline-block;
+}
+
+
+
+
+body {
+
+  max-width:  960px;
+  margin: 0 auto;
+}
+
 blockquote {
   border-left: 5px solid blue;
   padding: 15px;
@@ -30,3 +59,17 @@ figcaption {
   font-style: italic;
   text-align: right;
 }
+
+
+
+@media screen and (max-width: 500px) {
+    body {display:table; background-color;}
+    main {display:table-footer-group; float: none;}
+    #external-links {display:table-header-group; float: none;}
+    h1 {font-size: 20px;}
+    .text {font-size: 10px;}
+  }
+}
+
+
+
