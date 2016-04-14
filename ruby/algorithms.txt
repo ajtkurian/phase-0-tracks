@@ -1,0 +1,19 @@
+ How to use an Elevator
+ - Locate elevator in building and locate the button that opens elevator door
+ - Press button to call elevator by moving finger to location of button and applying 10N of force for 1 second and releasing
+ - Wait for elevator door opens 
+ - Enter elevator by moving your position through the doors and to the position that completely overlaps the location of the floor of the elevator
+ - locate the keypad by scanning all walls until a buttons with numbers are located
+ - Press the button that corresponds to the floor that you want to go to by reading the buttons until the correct number is found and pushing that button by moving finger to the location of that button relative the wall it is in and applying 10 N of force for 1 second and releasing.
+ - Wait until door opens again and walk outside of elevator by locating the door and walking through it making sure your currrent location is outside of the elevator
+
+
+How to walk in a straight line:
+-Stand up tall with legs shoulder-width apart.
+-lift right knee until right foot is off the floor.
+-Extend right knee until right leg is fully extended and lower right leg until right foot touches floor
+-Shift weight onto right leg and move right knee forward.
+-Lift left knee until left foot is off the floor
+-Extend left knee until left leg is fully extended and lower left leg until left foot touches the floor.
+- Repeat
+
