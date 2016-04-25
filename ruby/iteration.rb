@@ -1,10 +1,11 @@
-def chipotle
-	ingredients = ["guac", "salsa", "steak", "rice"]
-	yield(ingredients)
+def chipotle(*ingredients)
+	puts "My favorite ingredients are #{ingredients}"
+	yield(ingredients) if block_given?
+	puts "This message is to display after block has run"
 
 end
 
-chipotle {|ingredients|  3.times { puts "At Chipotle I had #{ingredients} in my burrito"}}
+chipotle('guac', 'salsa', 'steak', 'rice') {|ingredients|  3.times { puts "At Chipotle I had #{ingredients} in my burrito"}}
 
 
 array = ["bananas", "apples", "oranges", "grapes"]
