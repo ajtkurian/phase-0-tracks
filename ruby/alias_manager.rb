@@ -3,9 +3,7 @@
 #Find each letter in their respective vowel or consonant array and output the next index
 #Perform this operation for all letters in the array and join array into string
 #Output said string
-puts "Type in name to convert"
-name = gets.chomp
-puts alias_name(name)
+
 
 def alias_name(input)
 	name_array = input.name_split_switch
@@ -39,5 +37,13 @@ class String
 	end
 end
 
-
+name_hash = {}
+while true
+	puts "Type in name to convert. Type 'quit' to exit."
+	name = gets.chomp 
+	break if name == 'quit'
+	name_hash[name] = alias_name(name)
+	puts name_hash[name]
+end
+name_hash.each{|n, a| puts "#{a} is really #{n}"}
 
