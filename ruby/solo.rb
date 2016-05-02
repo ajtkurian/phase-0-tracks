@@ -43,5 +43,5 @@ else
 end
 people_food_music = [my_party.people, my_party.food, my_party.music]
 
-people_and_food.each {|item| puts item}
+people_food_music.each {|item| puts item}
 
