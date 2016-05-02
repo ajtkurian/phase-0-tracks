@@ -9,6 +9,25 @@
 require_relative 'state_data'
 
 class VirusPredictor
+  def self.national_report
+
+    #input: state, population density, population
+    #output: predicted deaths and speed of spread methods
+    
+    # Iterate thorugh state hash and iterate again through its value of state_data.
+    # Create object with new information
+    # Call virus_effects method on that object 
+    
+    STATE_DATA.each do |state, value|
+      population_density = value[:population_density]
+      population = value[:population]
+
+      us_state = self.new(state, population_density, population)
+      us_state.virus_effects
+    end
+
+  end
+
 
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
@@ -81,6 +100,8 @@ california.virus_effects
 
 alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
 alaska.virus_effects
+
+VirusPredictor.national_report
 
 
 #=======================================================================
