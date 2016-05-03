@@ -1,10 +1,10 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
+# I worked on this challenge [by myself, with: Seth ].
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
+# Includes another file inside code with respect to its relative location
 #
 require_relative 'state_data'
 
@@ -36,50 +36,71 @@ class VirusPredictor
   end
 
   def virus_effects
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
+    predicted_deaths_and_spread
   end
 
   private
 
-  def predicted_deaths(population_density, population, state)
-    # predicted deaths is solely based on population density
-    if @population_density >= 200
-      number_of_deaths = (@population * 0.4).floor
-    elsif @population_density >= 150
-      number_of_deaths = (@population * 0.3).floor
-    elsif @population_density >= 100
-      number_of_deaths = (@population * 0.2).floor
-    elsif @population_density >= 50
-      number_of_deaths = (@population * 0.1).floor
-    else
-      number_of_deaths = (@population * 0.05).floor
-    end
+  def predicted_deaths_and_spread
+   # predicted deaths is solely based on population density
+   speed = 0.0
+   if @population_density >= 200
+     number_of_deaths = (@population * 0.4).floor
+     speed += 0.5
+   elsif @population_density >= 150
+     number_of_deaths = (@population * 0.3).floor
+     speed += 1
+   elsif @population_density >= 100
+     number_of_deaths = (@population * 0.2).floor
+     speed += 1.5
+   elsif @population_density >= 50
+     number_of_deaths = (@population * 0.1).floor
+     speed += 2
+   else
+     number_of_deaths = (@population * 0.05).floor
+     speed += 2.5
+   end    
+   print "#{@state} will lose #{number_of_deaths} people in this outbreak and will spread across the state in #{speed} months.\n\n"
+ end
 
-    print "#{@state} will lose #{number_of_deaths} people in this outbreak"
+  # def predicted_deaths
+  #   # predicted deaths is solely based on population density
+  #   if @population_density >= 200
+  #     number_of_deaths = (@population * 0.4).floor
+  #   elsif @population_density >= 150
+  #     number_of_deaths = (@population * 0.3).floor
+  #   elsif @population_density >= 100
+  #     number_of_deaths = (@population * 0.2).floor
+  #   elsif @population_density >= 50
+  #     number_of_deaths = (@population * 0.1).floor
+  #   else
+  #     number_of_deaths = (@population * 0.05).floor
+  #   end
 
-  end
+  #   print "#{@state} will lose #{number_of_deaths} people in this outbreak"
 
-  def speed_of_spread(population_density, state) #in months
-    # We are still perfecting our formula here. The speed is also affected
-    # by additional factors we haven't added into this functionality.
-    speed = 0.0
+  # end
 
-    if @population_density >= 200
-      speed += 0.5
-    elsif @population_density >= 150
-      speed += 1
-    elsif @population_density >= 100
-      speed += 1.5
-    elsif @population_density >= 50
-      speed += 2
-    else
-      speed += 2.5
-    end
+  # def speed_of_spread #in months
+  #   # We are still perfecting our formula here. The speed is also affected
+  #   # by additional factors we haven't added into this functionality.
+  #   speed = 0.0
 
-    puts " and will spread across the state in #{speed} months.\n\n"
+  #   if @population_density >= 200
+  #     speed += 0.5
+  #   elsif @population_density >= 150
+  #     speed += 1
+  #   elsif @population_density >= 100
+  #     speed += 1.5
+  #   elsif @population_density >= 50
+  #     speed += 2
+  #   else
+  #     speed += 2.5
+  #   end
 
-  end
+  #   puts " and will spread across the state in #{speed} months.\n\n"
+
+  # end
 
 end
 
@@ -103,6 +124,10 @@ alaska.virus_effects
 
 VirusPredictor.national_report
 
-
 #=======================================================================
-# Reflection Section
+# # Reflection Section
+# The larger hash uses hash rockets to assign hashes to strings and values assigned to symbol keys.
+# require relative is the link to another file by using a relative path
+# Each method iterates through hash as well as a for or do loop
+# Instance variable of virus_effects are not needed as parameters to call other methods in the same class
+# Using class methods helped me understand another aspect of working with classes
