@@ -1,0 +1,27 @@
+SELECT * FROM employees;
+
+1|Billy|65|1
+2|Bob|120|2
+3|Jim|100|3
+4|Steve|1|3
+
+UPDATE employees
+SET employer_id = 2
+WHERE name = "Billy";
+
+SELECT * FROM employees, employers WHERE employees.employer_id = employers.id;
+
+1|Billy|65|2|2|Microsoft
+2|Bob|120|2|2|Microsoft
+3|Jim|100|3|3|Apple
+4|Steve|1|3|3|Apple
+
+SELECT employees.name, employers.name FROM employees JOIN employers ON employees.employer_id = employers.id;
+
+Billy|65|Microsoft
+Bob|120|Microsoft
+Jim|100|Apple
+Steve|1|Apple
+
+DELETE FROM employees
+WHERE salary < 10;
